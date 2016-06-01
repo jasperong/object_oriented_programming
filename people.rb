@@ -22,10 +22,10 @@ class Instructor < Person
   end
 end
 
-chris = Person.new
+chris = Instructor.new
 chris.name = "Chris"
 puts chris.greeting
 
-cristina = Person.new
+cristina = Student.new
 cristina.name = "Cristina"
 puts cristina.greeting
