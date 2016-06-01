@@ -32,3 +32,6 @@ puts cristina.greeting
 
 chris.teach
 cristina.learn
+
+# won't work since teach method is not defined in student class
+cristina.teach
