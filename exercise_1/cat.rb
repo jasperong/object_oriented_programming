@@ -5,3 +5,6 @@ class cat
     @meal_time = meal_time
   end
 end
+
+kitty = Cat.new("kitty", "tuna", "12 PM")
+neko = Cat.new("neko", "salmon", "3 PM")
