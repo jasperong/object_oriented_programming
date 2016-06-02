@@ -8,7 +8,7 @@ class Cat
     @meal_time = meal_time
   end
 
-  def meal_time
+  def eats_at
     if @meal_time <= 11
       "#{@meal_time + 1} AM"
     else
@@ -17,7 +17,7 @@ class Cat
   end
 
   def meow
-    "My name is #{@name} and I eat #{@preferred_food} at #{meal_time}"
+    "My name is #{@name} and I eat #{@preferred_food} at #{eats_at}"
   end
 end
 

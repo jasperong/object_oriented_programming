@@ -4,13 +4,21 @@ class Rover
   def initialize(x, y, direction)
     puts "Starting point?"
     start = gets.chomp
-    puts 
+    puts
 
   end
 
-  def read_instruction(direction)
-
-
+  def read_instruction
+    puts "Enter grid size"
+    size = gets.chomp.gsub(" ", "").split("")
+    puts "Enter 1st rover initial position and direction"
+    initial_1 = gets.chomp.gsub(" ", "").split("")
+    puts "Enter move instructions"
+    instructions_1 = gets.chomp.gsub(" ", "").split("")
+    puts "Enter 2nd rover initial position and direction"
+    initial_2 = gets.chomp.gsub(" ", "").split("")
+    puts "Enter 2nd rover move instructions"
+    instructions_2 = gets.chomp.gsub(" ", "").split("")
   end
 
   def move
