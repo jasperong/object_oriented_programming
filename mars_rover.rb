@@ -2,15 +2,18 @@ class Rover
   attr_accessor :x, :y, :direction, :steps, :turn
 
   def initialize(x, y, direction)
-
+    puts "Starting point?"
+    start = gets.chomp
+    puts 
 
   end
 
   def read_instruction(direction)
 
+
   end
 
-  def move(steps)
+  def move
     case @direction
     when n
       y += 1
@@ -24,8 +27,6 @@ class Rover
   end
 
   def turn(turn)
-    puts "Enter L to turn left"
-    puts "Enter R to turn right"
 
   end
 end
