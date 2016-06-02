@@ -15,10 +15,15 @@ class Cat
       "#{@meal_time - 11} PM"
     end
   end
+
+  def meow
+    "My name is #{@name} and I eat #{@preferred_food} at #{meal_time}"
+  end
 end
 
 
 kitty = Cat.new("kitty", "tuna", 11)
 neko = Cat.new("neko", "salmon", 14)
 
-puts kitty.meal_time
+puts kitty.meow
+puts neko.meow
