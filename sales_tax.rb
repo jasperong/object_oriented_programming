@@ -26,4 +26,18 @@ cart_1 = {
   "chocolate bar" => 0.85
 }
 
+cart_2 = {
+  "imported box of chocolates" => 10.00,
+  "imported bottle of perfume" => 47.50
+}
+
+cart_3 = {
+  "imported bottle of perfume" => 27.99,
+  "bottle of perfume" => 18.99,
+  "packet of headache pills" => 9.75,
+  "box of imported chocolates" => 11.25
+}
+
 total_price(cart_1)
+total_price(cart_2)
+total_price(cart_3)
