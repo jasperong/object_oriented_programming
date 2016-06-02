@@ -1,22 +1,26 @@
+class Float
+  def round5
+    (self * 10.0).round / 10.0
+  end
+end
+
 def total_price(items)
 
   items.map do |item, price|
-    basic_tax = price * 0.1
-    imp_tax = price * 0.05
-    @total_tax = basic_tax + imp_tax
+    @basic_tax = price * 0.1
+    @imp_tax = price * 0.05
+    @total_tax = @basic_tax + @imp_tax
   end
 
   items.each do |item, price|
-    puts "#{item}: #{price + @total_tax}"
+    puts "#{item}: #{(price + @total_tax).round5}"
   end
 
-  items.each_value do
-    puts "Sales Taxes: #{@total_tax}"
-  end
+    puts "Sales Taxes: #{@total_tax.round5}"
 
-  total = items.each_value.inject(:+)
+  total = items.each_value.inject(:+) + @total_tax
 
-  puts "Total: #{total}"
+  puts "Total: #{total.round5}"
 
 end
 
