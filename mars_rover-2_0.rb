@@ -5,6 +5,10 @@ class Rover
     @x = x
     @y = y
     @direction = direction
+    @n = "N"
+    @w = "W"
+    @s = "S"
+    @e = "E"
   end
 
   def read_instruction
@@ -15,36 +19,40 @@ class Rover
       @direction = @initial[2]
     puts "Enter move instructions"
     @instructions = gets.chomp.gsub(" ", "").split("")
-    puts "Enter 2nd rover initial position and direction"
   end
 
-  def turn(turn)
-    @instructions.each do |command|
-      case command == "L"
-      when @initial.include?("N") then @w
-      when @initial.include?("W") then @s
-      when @initial.include?("S") then @e
-      when @initial.include?("E") then @n
-      end
-      case command == "R"
-      when @initial.include?("N") then @e
-      when @initial.include?("E") then @s
-      when @initial.include?("S") then @w
-      when @initial.include?("W") then @n
-      end
+  def turn
+    case "L"
+      when @n then @w
+      when @w then @s
+      when @s then @e
+      when @e then @n
+    end
+    case "R"
+      when @n then @e
+      when @e then @s
+      when @s then @w
+      when @w then @n
     end
   end
 
   def move
-    @instructions.each do |command|
-      case command == "M"
+    case "M"
       when @n then @y += 1
       when @e then @x += 1
       when @s then @y -= 1
       when @w then @x -= 1
+    end
+  end
+
+  def walk
+    @instructions.map do |array|
+      case array
+        when "M" then move
+        when "L" then turn
+        when "R" then turn
       end
     end
-    "#{@x} #{@y} #{@direction}"
   end
 end
 
