@@ -23,17 +23,18 @@ class Rover
 
   def turn
     case "L"
-      when @n then @w
-      when @w then @s
-      when @s then @e
-      when @e then @n
+      when @n then @direction = @w
+      when @w then @direction = @s
+      when @s then @direction = @e
+      when @e then @direction = @n
     end
     case "R"
-      when @n then @e
-      when @e then @s
-      when @s then @w
-      when @w then @n
+      when @n then @direction = @e
+      when @e then @direction = @s
+      when @s then @direction = @w
+      when @w then @direction = @n
     end
+    @direction
   end
 
   def move
@@ -46,15 +47,15 @@ class Rover
   end
 
   def walk
-    @instructions.map do |array|
-      case array
-        when "M" then move
-        when "L" then turn
-        when "R" then turn
+    @instructions.each do |command|
+      if command == "M"
+        move
+      elsif command == "L" || command == "R"
+        turn
       end
     end
+    @initial[0] = @x
+    @initial[1] = @y
+    @initial[2] = @direction
   end
 end
-
-puts "Enter grid size"
-@size = gets.chomp.gsub(" ", "").split("")
