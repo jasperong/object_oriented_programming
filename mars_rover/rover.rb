@@ -1,6 +1,7 @@
 class Rover
   attr_accessor :rover_name, :instructions
-
+  attr_reader :x, :y, :direction
+  
   def initialize(x, y, direction)
     @x = x
     @y = y
@@ -44,7 +45,5 @@ class Rover
     end
   end
 
-  def output
-    "#{@x} #{@y} #{@direction}"
-  end
+
 end
